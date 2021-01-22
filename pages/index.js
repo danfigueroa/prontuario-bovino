@@ -22,7 +22,7 @@ function HelloWorld() {
 
     return (
         <h1>{sayHello}</h1>
-        <InputName onClick ={handleClick} setValue={setValue}>Click aqui!</InputName>
+        //<InputName onClick ={handleClick} setValue={setValue}>Click aqui!</InputName>
     )   
 }
 

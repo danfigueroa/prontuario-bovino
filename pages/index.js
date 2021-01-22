@@ -1,28 +1,28 @@
 import {useState} from 'react'
 import InputName from './inputName'
 
-function Home() {
+export default function Home() {
     return <div>
                 <h1>Exercício 5</h1>
-                <Contador/>
+                <HelloWorld/>
             </div>
 }
 
-function Contador() {
+function HelloWorld() {
 
-    const [contador, setContador] = useState(1)
+    const [sayHello, setSayHello] = useState(props.sayHello)
+    const [value, setValue] = useState(props.value)
 
-    function adicionarContador() {
-        setContador(contador+1)
+    const handleClick = () => {
+        let message = 'Olá ${value}'
+        if(!value)
+            message = 'Olá, informe seu nome abaixo: '
+        setSayHello(message)
     }
 
     return (
-        <div>
-            <div>${value}</div>
-            <div>{contador}</div>
-            <button onClick={adicionarContador}>Adicionar</button>
-        </div>
+        <h1>{sayHello}</h1>
+        <InputName onClick ={handleClick} setValue={setValue}>Click aqui!</InputName>
     )   
 }
 
-export default Home
